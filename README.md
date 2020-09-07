@@ -30,43 +30,40 @@ npm run test:unit
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
--   audio recordings
-    -   undo / redo
-
 ## content:
 
 ### notes:
 
-    * pinned
-    * archived
-    * tags
-    * favorite (tag?)
-    * checkbox
-    * trash (delete after alloted time has passed)
+    - pinned
+    - archived
+    - tags
+    - favorite (tag?)
+    - checkbox
+    - trash (delete after alloted time has passed)
 
 ### individual note structure:
 
-    * title
-    * body
-    * tags (custom categories)
-    * id (unique id)
-    * checkbox (boolean)
+    - title
+    - body
+    - tags (custom categories)
+    - id (unique id)
+    - checkbox (boolean)
 
 ### array storage for notes:
 
-    * default / active
-    * archived
-    * pinned
-    * tagged / favorite?
-    * reminders?
-    * trash
+    - default / active
+    - archived
+    - pinned
+    - tagged / favorite?
+    - reminders?
+    - trash
 
 ### possible features:
 
-    * text editor / text formatting
-    * import images
-    * links
-    * reminders
-    * drawings
-    * audio recordings
-    * undo / redo
+    - text editor / text formatting
+    - import images
+    - links
+    - reminders
+    - drawings
+    - audio recordings
+    - undo / redo
