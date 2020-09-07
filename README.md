@@ -1,6 +1,6 @@
 # notes-again
 
-third and, hopefully, final note app design
+third and, _hopefully_, final note app design
 
 ## content:
 
