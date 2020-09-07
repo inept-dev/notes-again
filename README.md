@@ -2,9 +2,9 @@
 
 third and, hopefully, final note app design
 
-# features
+## content:
 
-## notes:
+### notes:
 
     * pinned
     * archived
@@ -13,7 +13,7 @@ third and, hopefully, final note app design
     * checkbox
     * trash (delete after alloted time has passed)
 
-## individual note structure:
+### individual note structure:
 
     * title
     * body
@@ -21,7 +21,7 @@ third and, hopefully, final note app design
     * id (unique id)
     * checkbox (boolean)
 
-## array storage for notes:
+### array storage for notes:
 
     * default / active
     * archived
@@ -30,7 +30,7 @@ third and, hopefully, final note app design
     * reminders?
     * trash
 
-## possible features:
+### possible features:
 
     * text editor / text formatting
     * import images
