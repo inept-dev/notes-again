@@ -1,6 +1,11 @@
 <template>
-	<div>
-		MANAGER
+	<div class="component-catch">
+		<div class="title-input">
+			<textarea></textarea>
+		</div>
+		<div class="body-input">
+			<textarea></textarea>
+		</div>
 	</div>
 </template>
 
@@ -10,4 +15,15 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.component-catch {
+}
+textarea {
+	border: none;
+	background-color: lightblue;
+}
+.title-input textarea {
+}
+.body-input textarea {
+}
+</style>

@@ -1,13 +1,15 @@
 <template>
 	<div class="home">
-		<div class="sidebar">
-			<sidebar />
-		</div>
-		<div class="manager">
-			<manager />
+		<div class="sidebar-manager">
+			<div class="sidebar">
+				<sidebar />
+			</div>
+			<div class="manager">
+				<manager />
+			</div>
 		</div>
 		<footer>
-			just some footer text idk
+			<h3>footer text</h3>
 		</footer>
 	</div>
 </template>
@@ -26,23 +28,25 @@ export default {
 </script>
 
 <style scoped>
+.sidebar-manager {
+	display: block;
+}
 .sidebar {
 	border: solid 1px red;
-	display: inline-flex;
+	display: inline-block;
 	width: 25vw;
 	height: 95vh;
 }
-
 .manager {
 	border: solid 1px blue;
-	display: inline-flex;
-	width: 75vw;
+	display: inline-block;
+	width: 70vw;
 	height: 95vh;
 }
-
 footer {
 	border: solid 1px green;
 	display: block;
+	width: 100vw;
 	height: 5vh;
 }
 </style>
