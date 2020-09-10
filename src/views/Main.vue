@@ -29,24 +29,23 @@ export default {
 
 <style scoped>
 .sidebar-manager {
-	display: block;
+	display: flex;
 }
 .sidebar {
-	border: solid 1px red;
-	display: inline-block;
+	background: lightcoral;
+	display: flex;
 	width: 25vw;
 	height: 95vh;
 }
 .manager {
-	border: solid 1px blue;
-	display: inline-block;
-	width: 70vw;
+	background: lightseagreen;
+	display: flex;
+	width: 75vw;
 	height: 95vh;
 }
 footer {
-	border: solid 1px green;
+	background: lightgreen;
 	display: block;
-	width: 100vw;
 	height: 5vh;
 }
 </style>

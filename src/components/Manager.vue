@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style scoped>
+/*
 .component-catch {
 }
 textarea {
@@ -26,4 +27,5 @@ textarea {
 }
 .body-input textarea {
 }
+*/
 </style>
