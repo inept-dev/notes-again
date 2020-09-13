@@ -8,19 +8,23 @@
 				<manager />
 			</div>
 		</div>
+		<!--
 		<footer>
 			<h3>footer text</h3>
 		</footer>
+		-->
 	</div>
 </template>
 
 <script>
+import menu from "../components/Menu.vue";
 import sidebar from "../components/Sidebar.vue";
 import manager from "../components/Manager.vue";
 
 export default {
 	name: "Main",
 	components: {
+		menu,
 		sidebar,
 		manager,
 	},
@@ -30,22 +34,33 @@ export default {
 <style scoped>
 .sidebar-manager {
 	display: flex;
+	height: 100vh;
 }
 .sidebar {
 	background: lightcoral;
 	display: flex;
-	width: 25vw;
-	height: 95vh;
+	width: 30vw;
 }
 .manager {
 	background: lightseagreen;
 	display: flex;
-	width: 75vw;
-	height: 95vh;
+	width: 70vw;
 }
+/*
 footer {
 	background: lightgreen;
 	display: block;
 	height: 5vh;
+}
+*/
+/* tablets and other mobile devices will use the same formatting for the sake of consistency */
+@media only screen and (max-width: 1024px) {
+	.sidebar {
+		width: 100vw;
+	}
+	.manager {
+		width: 100vw;
+		display: none;
+	}
 }
 </style>
