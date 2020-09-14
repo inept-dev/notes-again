@@ -11,9 +11,10 @@
 				<button class="trash">TRASH</button>
 			</div>
 		</div>
-			<div class="mkdn-editor">
-				<TextEditor />
-			</div>
+		<div class="mkdn-editor">
+			<!-- <editor /> -->
+			<texteditor />
+		</div>
 		<!--
 		<div class="title-input">
 			<textarea placeholder="Title"></textarea>
@@ -26,13 +27,13 @@
 </template>
 
 <script>
-import TextEditor from "../components/TextEditor.vue";
+import texteditor from "../components/TextEditor.vue";
 
 export default {
 	name: "Manager",
 	components: {
-		TextEditor
-	}
+		texteditor,
+	},
 };
 </script>
 
@@ -60,7 +61,8 @@ export default {
 	height: 10vh;
 	font-size: 25px;
 	color: white;
-	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	font-weight: bold;
 }
 .title-input textarea::placeholder {
@@ -72,7 +74,8 @@ export default {
 	height: 80vh;
 	font-size: 20px;
 	color: white;
-	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .body-input textarea::placeholder {
 	color: rgba(255, 255, 255, 0.75);
@@ -94,7 +97,9 @@ button {
 }
 /* tablets and other mobile devices will use the same formatting for the sake of consistency */
 @media only screen and (max-width: 1024px) {
-	.component-catch, .component-catch textarea, .top-bar {
+	.component-catch,
+	.component-catch textarea,
+	.top-bar {
 		width: 100vw;
 	}
 }
