@@ -12,7 +12,7 @@
 			</div>
 		</div>
 			<div class="mkdn-editor">
-				
+				<TextEditor />
 			</div>
 		<!--
 		<div class="title-input">
@@ -26,8 +26,13 @@
 </template>
 
 <script>
+import TextEditor from "../components/TextEditor.vue";
+
 export default {
 	name: "Manager",
+	components: {
+		TextEditor
+	}
 };
 </script>
 
