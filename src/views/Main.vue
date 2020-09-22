@@ -8,11 +8,6 @@
 				<manager />
 			</div>
 		</div>
-		<!--
-		<footer>
-			<h3>footer text</h3>
-		</footer>
-		-->
 	</div>
 </template>
 
