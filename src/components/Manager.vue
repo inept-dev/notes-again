@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="mkdn-editor">
-			<editor-content :editor="editor" />
+			<text-editor />
 		</div>
 		<!--
 		<div class="title-input">
@@ -26,25 +26,12 @@
 </template>
 
 <script>
-import { Editor, EditorContent } from "tiptap";
+import { textEditor } from "../components/textEditor.vue";
 
 export default {
 	name: "Manager",
 	components: {
-		EditorContent,
-	},
-	data() {
-		return {
-			editor: null,
-		};
-	},
-	mounted() {
-		this.editor = new Editor({
-			content: "<p>This is just a boring paragraph</p>",
-		});
-	},
-	beforeDestory() {
-		this.editor.destroy();
+		textEditor,
 	},
 };
 </script>
