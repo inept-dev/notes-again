@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import { textEditor } from "../components/textEditor.vue";
+import { TextEditor } from "../components/TextEditor.vue";
 
 export default {
 	name: "Manager",
 	components: {
-		textEditor,
+		"text-editor": TextEditor,
 	},
 };
 </script>

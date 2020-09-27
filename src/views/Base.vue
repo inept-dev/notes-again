@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import menu from "../components/Menu.vue";
+import menuComp from "../components/MenuComp.vue";
 import sidebar from "../components/Sidebar.vue";
 import manager from "../components/Manager.vue";
 
 export default {
-	name: "Main",
+	name: "Base",
 	components: {
-		menu,
+		menuComp,
 		sidebar,
 		manager,
 	},
