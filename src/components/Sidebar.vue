@@ -2,16 +2,23 @@
 	<div class="component-catch">
 		<div class="top-bar">
 			<button class="nav-btn">NAV</button>
-			<input type="text" placeholder="Search" class="search-bar"/>
+			<input type="text" placeholder="Search" class="search-bar" />
 			<button class="add-btn">ADD</button>
 		</div>
 		<div class="list-view">
-			<div class="preview">
-				<div class="title-preview">
-					Title
-				</div>
-				<div class="body-preview">
-					Body, three entire lines
+			<div
+				class="text-editor"
+				v-for="(item, index) in notes.active.view"
+				:key="item.id"
+				:index="index.id"
+			>
+				<div class="preview">
+					<div class="title-preview">
+						{{ item.title }}
+					</div>
+					<div class="body-preview">
+						{{ item.body }}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -19,14 +26,20 @@
 </template>
 
 <script>
+import app from "../App.vue";
+
 export default {
 	name: "Sidebar",
+	data() {
+		return {
+			notes: app.notes,
+		};
+	},
 };
 </script>
 
 <style scoped>
 .component-catch {
-
 }
 .top-bar {
 	background: rgba(0, 0, 0, 0.25);
@@ -54,7 +67,8 @@ export default {
 	height: 10vh;
 	background: rgba(255, 255, 255, 0.25);
 	padding: 10px;
-	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 .title-preview {
@@ -67,7 +81,8 @@ export default {
 }
 /* tablets and other mobile devices will use the same formatting for the sake of consistency */
 @media only screen and (max-width: 1024px) {
-	.top-bar, .list-view {
+	.top-bar,
+	.list-view {
 		width: 100vw;
 	}
 	.search-bar {

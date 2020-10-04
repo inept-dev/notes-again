@@ -22,7 +22,7 @@ import sidebar from "../components/Sidebar.vue";
 import manager from "../components/Manager.vue";
 
 export default {
-	name: "Main",
+	name: "Base",
 	components: {
 		menu,
 		sidebar,
