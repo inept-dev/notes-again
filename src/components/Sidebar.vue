@@ -3,21 +3,21 @@
 		<div class="top-bar">
 			<button class="nav-btn">NAV</button>
 			<input type="text" placeholder="Search" class="search-bar" />
-			<button class="add-btn">ADD</button>
+			<button class="add-btn" @click="this.addNote('title', 'body', ['red', 'yellow', 'green', 'green', 'apple'])">ADD</button>
 		</div>
 		<div class="list-view">
 			<div
 				class="text-editor"
-				v-for="(item, index) in notes.active.view"
-				:key="item.id"
+				v-for="(uuid, index) in this.active"
+				:key="uuid.id"
 				:index="index.id"
 			>
 				<div class="preview">
 					<div class="title-preview">
-						{{ item.title }}
+						{{ this.notes.get(uuid).title }}
 					</div>
 					<div class="body-preview">
-						{{ item.body }}
+						{{ this.notes.get(uuid).body }}
 					</div>
 				</div>
 			</div>
@@ -27,14 +27,22 @@
 
 <script>
 import app from "../App.vue";
+import * as call from ".../f";
 
 export default {
 	name: "Sidebar",
 	data() {
 		return {
 			notes: app.notes,
+			active: app.active,
+			archived: app.archived,
 		};
 	},
+	methods: {
+		addNote(title, body, tag) {
+			call.addNote(title, body, tag);
+		}
+	}
 };
 </script>
 

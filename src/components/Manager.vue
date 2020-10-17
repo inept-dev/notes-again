@@ -14,32 +14,31 @@
 		<!--
 		<div class="mkdn-editor"></div>
 		-->
-		<div
-			class="text-editor"
-			v-for="(item, index) in notes.active.manager"
-			:key="item.id"
-			:index="index.id"
-		>
+		<div class="text-editor">
 			<div class="title-input">
-				<textarea v-model="item.title"></textarea>
+				<textarea v-model="temporary"></textarea>
 			</div>
 			<div class="body-input">
-				<textarea v-model="item.body"></textarea>
+				<textarea v-model="body"></textarea>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import app from "../App.vue";
+let app = require("../App.vue");
+//import * as call from "../functions.js";
 
 export default {
 	name: "Manager",
 	data() {
 		return {
 			notes: app.notes,
+			active: app.active,
+			archived: app.archived,
+			editable: app.editable,
 		};
-	},
+	}
 };
 </script>
 
