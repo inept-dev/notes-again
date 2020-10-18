@@ -3,21 +3,20 @@
 		<div class="top-bar">
 			<button class="nav-btn">NAV</button>
 			<input type="text" placeholder="Search" class="search-bar" />
-			<button class="add-btn">ADD</button>
+			<button class="add-btn" @click="this.createNote()">ADD</button>
 		</div>
 		<div class="list-view">
 			<div
 				class="text-editor"
-				v-for="(item, index) in notes.active.view"
-				:key="item.id"
-				:index="index.id"
+				v-for="(uuid) in this.active"
+				:key="uuid.id"
 			>
 				<div class="preview">
 					<div class="title-preview">
-						{{ item.title }}
+						{{ this.notes.get(uuid).title }}
 					</div>
 					<div class="body-preview">
-						{{ item.body }}
+						{{ this.notes.get(uuid).body }}
 					</div>
 				</div>
 			</div>
@@ -32,9 +31,36 @@ export default {
 	name: "Sidebar",
 	data() {
 		return {
-			notes: app.notes,
+			// Map of all notes
+			notes: app.data().notes,
+			// Standard Sets
+			active: app.data().active,
+			archived: app.data().archived,
+			favortie: app.data().favortie,
+			pinned: app.data().pinned,
+			// Tags / Custom Sets
+			allTags: app.data().allTags,
+			// uuid of note in Manager.vue
+			manage: app.data().manage,
 		};
 	},
+	methods: {
+		createNote() {
+			// input notes & active map to add
+			app.methods.createNote(this.notes, this.active, this.manage);
+			// const uuid = this.generateUUID();
+			// const note = {
+			// 	uuid: uuid,
+			// 	title: '',
+			// 	body: '',
+			// 	tags: new Set()
+			// }
+
+			// app.data().notes.set(note.uuid, note);
+			// app.data().active.add(note.uuid);
+			// console.log(app.data().notes);
+		}
+	}
 };
 </script>
 

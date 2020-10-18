@@ -14,17 +14,20 @@
 		<!--
 		<div class="mkdn-editor"></div>
 		-->
-		<div
-			class="text-editor"
-			v-for="(item, index) in notes.active.manager"
-			:key="item.id"
-			:index="index.id"
-		>
+		<div v-if="this.manage !== ''">
 			<div class="title-input">
-				<textarea v-model="item.title"></textarea>
+				<textarea v-model="this.working"></textarea>
 			</div>
 			<div class="body-input">
-				<textarea v-model="item.body"></textarea>
+				<textarea v-model="this.working"></textarea>
+			</div>
+		</div>
+		<div v-else>
+			<div class="title-input">
+				<textarea v-model="title"></textarea>
+			</div>
+			<div class="body-input">
+				<textarea v-model="body"></textarea>
 			</div>
 		</div>
 	</div>
@@ -37,9 +40,17 @@ export default {
 	name: "Manager",
 	data() {
 		return {
-			notes: app.notes,
+			notes: app.data().notes,
+			active: app.data().active,
+			manage: app.data().manage,
+			working: app.data().notes.get(app.data().manage)
 		};
 	},
+	methods: {
+		test() {
+			console.log("manage works")
+		}
+	}
 };
 </script>
 
