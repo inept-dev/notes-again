@@ -1,7 +1,7 @@
 <template>
 	<div class="component-catch">
 		<div class="top-bar">
-			<div class="back-btn">
+			<div class="back-btn" @click="test()">
 				<button class="back">BACK</button>
 			</div>
 			<div class="work-btn">
@@ -14,20 +14,17 @@
 		<!--
 		<div class="mkdn-editor"></div>
 		-->
-		<div v-if="this.manage !== ''">
+		<div v-if="this.manage !== 'stinky'">
 			<div class="title-input">
-				<textarea v-model="this.working"></textarea>
+				<textarea v-model="this.title"></textarea>
 			</div>
 			<div class="body-input">
-				<textarea v-model="this.working"></textarea>
+				<textarea v-model="this.body"></textarea>
 			</div>
 		</div>
 		<div v-else>
 			<div class="title-input">
-				<textarea v-model="title"></textarea>
-			</div>
-			<div class="body-input">
-				<textarea v-model="body"></textarea>
+				temporary
 			</div>
 		</div>
 	</div>
@@ -41,14 +38,15 @@ export default {
 	data() {
 		return {
 			notes: app.data().notes,
-			active: app.data().active,
 			manage: app.data().manage,
-			working: app.data().notes.get(app.data().manage)
+			title: app.data().notes.get(app.data().manage),
+			body: app.data().notes.get(app.data().manage),
+			tag: [],
 		};
 	},
 	methods: {
 		test() {
-			console.log("manage works")
+			console.log(app.data().active)
 		}
 	}
 };

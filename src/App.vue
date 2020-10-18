@@ -18,7 +18,7 @@ export default {
 			favortie: new Set(),
 			pinned: new Set(),
 			// uuid of note in Manager.vue
-			manage: '',
+			manage: 'stinky',
 		}
 	},
 	methods: {
@@ -56,7 +56,11 @@ export default {
 			console.log(notes.size)
 			console.log(notes.get(note.uuid));
 			return true;
-		}	
+		},
+		manageNote(uuid, manage) {
+			manage = uuid;
+			console.log(manage);
+		}
 	}
 };
 </script>

@@ -1,7 +1,7 @@
 ## App.vue
 - needs to contain any functions that will be used in other Vue files
-- [ ] generateUUID()
-- [ ] createNote()
+- [x] generateUUID()
+- [x] createNote()
 - [ ] editNote(uuid)
 - [ ] saveNote(uuid) // if editNote is closed without this
 - [ ] toggleCheck(uuid)

@@ -7,11 +7,10 @@
 		</div>
 		<div class="list-view">
 			<div
-				class="text-editor"
 				v-for="(uuid) in this.active"
 				:key="uuid.id"
 			>
-				<div class="preview">
+				<div class="preview" @click="manageNote(uuid)">
 					<div class="title-preview">
 						{{ this.notes.get(uuid).title }}
 					</div>
@@ -59,7 +58,47 @@ export default {
 			// app.data().notes.set(note.uuid, note);
 			// app.data().active.add(note.uuid);
 			// console.log(app.data().notes);
+		},
+		manageNote(uuid) {
+			app.methods.manageNote(uuid, this.manage);
 		}
+		/*
+		generateUUID() {
+			var d = new Date().getTime();//Timestamp
+			var d2 = (performance && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+				var r = Math.random() * 16;//random number between 0 and 16
+				if(d > 0){//Use timestamp until depleted
+					r = (d + r)%16 | 0;
+					d = Math.floor(d/16);
+				} else {//Use microseconds since page-load if supported
+					r = (d2 + r)%16 | 0;
+					d2 = Math.floor(d2/16);
+				}
+				return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+			});
+		},
+		createNote(notes, active, manage) {
+			const uuid = this.generateUUID();
+			const note = {
+				uuid: uuid,
+				title: '',
+				body: '',
+				tags: new Set(),
+				checkbox: false,
+			}
+
+			// this notes Map pulled from another Vue
+			this.notes.set(note.uuid, note);
+			// this active Set pulled from another Vue
+			this.active.add(note.uuid);
+			// this manage string pulled from another Vue
+			this.manage = note.uuid;
+			console.log(this.manage)
+			console.log(this.notes.get(note.uuid));
+			return true;
+		},
+		*/
 	}
 };
 </script>
@@ -76,6 +115,7 @@ export default {
 	background: rgba(255, 255, 255, 0.25);
 	height: 90vh;
 	width: 30vw;
+	cursor: pointer;
 }
 .nav-btn {
 	height: 10vh;
