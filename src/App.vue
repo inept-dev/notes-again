@@ -10,15 +10,15 @@ export default {
 		return {
 			// base Map of all notes
 			notes: new Map(),
+			// Tags / Custom Sets
+			allTags: new Map(),
 			// default uuid Sets for organizaiton
 			active: new Set(),
 			archived: new Set(),
 			favortie: new Set(),
 			pinned: new Set(),
-			// Tags / Custom Sets
-			allTags: new Set(),
 			// uuid of note in Manager.vue
-			manage: 'fdsaf',
+			manage: '',
 		}
 	},
 	methods: {
@@ -43,7 +43,8 @@ export default {
 				uuid: uuid,
 				title: '',
 				body: '',
-				tags: new Set()
+				tags: new Set(),
+				checkbox: false,
 			}
 
 			// this notes Map pulled from another Vue
